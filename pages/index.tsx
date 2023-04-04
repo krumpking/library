@@ -1,25 +1,16 @@
-import type { NextPage } from 'next'
-import React, { useState, useEffect } from 'react'
-<<<<<<< Updated upstream
-import Main from '../app/components/pages/main';
+import type { NextPage } from 'next';
+import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/store/hooks';
 import { selectPosition } from '../app/store/reducer';
-=======
->>>>>>> Stashed changes
-
-
-
+import Link from 'next/link';
+import Navbar from '../components/navbar';
 
 const Home: NextPage = () => {
-
-
-
-
   return (
-    <div>
-      Hello welcome to VIP template
+    <div className="flex flex-col p-16">
+      <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
