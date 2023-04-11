@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 export default function Navbar() {
   return (
     <div className="bg-black rounded-lg text-white flex flex-row  justify-between p-8 ">
-      <h1 className="">KnowledgeBase </h1>
-      <div className="">
+      <h1>KnowledgeBase </h1>
+      <div>
         <Link href="/books" className="mx-2">
           Books
         </Link>
