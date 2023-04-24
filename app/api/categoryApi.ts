@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { Category } from '../types/types';
-import { API_ROUTE, GENRES } from '../constants/constants';
+import { API_ROUTE, CATEGORIES } from '../constants/constants';
 
-export const getGenres = async () => {
+export const getCategory = async () => {
   try {
     // 👇️ const data: GetUsersResponse
     const { data, status } = await axios.get<Category[]>(
-      `${API_ROUTE}${GENRES}`,
+      `${API_ROUTE}${CATEGORIES}`,
       {
         headers: {
           Accept: 'application/json',

@@ -7,7 +7,7 @@ interface MyProps {
   url: string;
 }
 
-const Categories: FC<MyProps> = ({ genre, id, url }) => {
+const Genre: FC<MyProps> = ({ genre, id, url }) => {
   const getColor = () => {
     const colors = [
       'bg-sky-600',
@@ -30,11 +30,11 @@ const Categories: FC<MyProps> = ({ genre, id, url }) => {
     <div
       className={`${getColor()} font-semibold py-2 px-4 border rounded-lg text-center  text-white`}
     >
-      <Link key={id} href={`/categories/${url}`}>
+      <Link key={id} href={`/genres/${url}`}>
         {genre}
       </Link>
     </div>
   );
 };
 
-export default Categories;
+export default Genre;
