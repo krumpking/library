@@ -4,38 +4,40 @@ import { useAppDispatch, useAppSelector } from '../app/store/hooks';
 import { selectPosition } from '../app/store/reducer';
 import Link from 'next/link';
 // import Navbar from '../components/navbar';
-import Categories from '../app/components/Categories';
+
 import Navbar from '../app/components/navbar';
-import { Category } from '../app/types/types';
-import { getGenres } from '../app/api/categoryApi';
+
+import { getGenres } from '../app/api/GenreApi';
+import Genres from '../app/components/Genres';
+import { Genre } from '../app/types/types';
+import Category from '../app/components/Category';
+import AddGenre from '../app/components/AddGenre';
 
 const Home: NextPage = () => {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [genres, setGenres] = useState<Genre[]>([]);
 
   useEffect(() => {
     getGenres()
       .then((value: any) => {
-        console.log(value);
         if (value !== null) {
-          setCategories(value);
+          setGenres(value);
         } else {
           // alert('There was an error please try again');
         }
       })
       .catch(console.error);
-  }, [categories]);
+  }, [genres]);
 
   return (
     <div className="flex flex-col p-16">
       <Navbar />
-      {/* <Navbar /> */}
       <div
         id="categories"
         className="grid grid-cols-6 gap-6 mt-6 justify-between p-8 mx-auto"
       >
-        {categories.map((value: Category, index: number) => {
+        {genres.map((value: Genre, index: number) => {
           return (
-            <Categories
+            <Genres
               key={index}
               genre={value.genre}
               id={value.id}
@@ -44,6 +46,7 @@ const Home: NextPage = () => {
           );
         })}
       </div>
+      <Category />
     </div>
   );
 };
