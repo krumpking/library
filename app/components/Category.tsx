@@ -2,7 +2,6 @@ import React, { FC, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Category } from '../types/types';
-import { getCategory } from '../api/CategoryApi';
 
 const Categories = () => {
   const [category, setCategories] = useState<Category[]>([

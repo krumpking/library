@@ -4,10 +4,9 @@ import React, { FC, useEffect, useState } from 'react';
 interface MyProps {
   genre: string;
   id: number;
-  url: string;
 }
 
-const Genre: FC<MyProps> = ({ genre, id, url }) => {
+const Genre: FC<MyProps> = ({ genre, id }) => {
   const getColor = () => {
     const colors = [
       'bg-sky-600',
@@ -30,9 +29,7 @@ const Genre: FC<MyProps> = ({ genre, id, url }) => {
     <div
       className={`${getColor()} font-semibold py-2 px-4 border rounded-lg text-center  text-white`}
     >
-      <Link key={id} href={`/genres/${url}`}>
-        {genre}
-      </Link>
+      {genre}
     </div>
   );
 };
