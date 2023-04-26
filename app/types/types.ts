@@ -1,7 +1,5 @@
 export interface Genre {
-  genre: string;
-  url: string;
-  color: string;
+  name: string;
   id: number;
 }
 
